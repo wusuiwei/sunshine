@@ -1,0 +1,19 @@
+### Java
+# Compile class File
+*.class
+
+# package Files
+*.jar
+*.war
+
+# Log File
+*.log
+
+# .idea
+.idea
+
+# IntelliJ
+out/
+
+
+### react

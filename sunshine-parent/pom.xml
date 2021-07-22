@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wusuiwei</groupId>
+    <artifactId>sunshine-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <modules>
+        <module>sunshine-common-service</module>
+        <module>sunshine-devops-service</module>
+        <module>sunshine-project-service</module>
+        <module>sunshine-report-service</module>
+        <module>sunshine-server</module>
+        <module>sunshine-team-service</module>
+        <module>sunshine-test-service</module>
+        <module>sunshine-user-service</module>
+        <module>sunshine-wiki-service</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.16</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
