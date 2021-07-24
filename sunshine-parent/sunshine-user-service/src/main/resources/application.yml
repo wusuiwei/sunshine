@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: work
+server:
+  port: 6001
