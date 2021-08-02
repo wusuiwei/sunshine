@@ -1,7 +1,7 @@
 package com.wusuiwei.user.daos;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.wusuiwei.user.entities.User;
+import com.wusuiwei.user.daos.entities.User;
 
 /**
  * 用户mapper
@@ -10,5 +10,6 @@ import com.wusuiwei.user.entities.User;
  * @date 2021/7/24 16:46
  */
 public interface UserMapper extends BaseMapper<User> {
+
 
 }

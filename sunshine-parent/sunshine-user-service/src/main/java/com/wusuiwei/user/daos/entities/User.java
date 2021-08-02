@@ -1,4 +1,4 @@
-package com.wusuiwei.user.entities;
+package com.wusuiwei.user.daos.entities;
 
 import lombok.Data;
 

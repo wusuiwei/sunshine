@@ -4,7 +4,6 @@ create database sunshine_user;
 
 use sunshine_user;
 
-
 /**
  * 用户表
  */
@@ -30,6 +29,35 @@ create table user
  */
 drop table if exists role;
 create table role
+(
+    id             int auto_increment primary key,
+    role_name      varchar(50) not null,
+    status         tinyint,
+    create_at      mediumtext,
+    update_at      mediumtext,
+    create_user_id int,
+    update_user_id int
+);
+/*
+ * 用户组
+ */
+drop table if exists organization;
+create table organization
+(
+    id             int auto_increment primary key,
+    role_name      varchar(50) not null,
+    status         tinyint,
+    create_at      mediumtext,
+    update_at      mediumtext,
+    create_user_id int,
+    update_user_id int
+);
+
+/*
+ * 权限表
+ */
+drop table if exists permission;
+create table permission
 (
     id             int auto_increment primary key,
     role_name      varchar(50) not null,

@@ -12,13 +12,13 @@ public class SaltUtils {
     /**
      * 获取生成的盐
      *
-     * @param n 盐的长度
+     * @param saltlength 盐的长度
      * @return
      */
-    public static String getSalt(int n) {
+    public static String getSalt(int saltlength) {
         char[] chars = "bakfbaowbfjkabofbaCCUVUIVIWDKV%$&^%*&*%$1131415".toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < saltlength; i++) {
             char ch = chars[new Random().nextInt(chars.length)];
             stringBuilder.append(ch);
         }

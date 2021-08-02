@@ -1,6 +1,6 @@
 package com.wusuiwei.user.daos;
 
-import com.wusuiwei.user.entities.User;
+import com.wusuiwei.user.daos.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

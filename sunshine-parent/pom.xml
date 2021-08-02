@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <sunshine.version>1.0.0</sunshine.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <springboot.version>2.3.1.RELEASE</springboot.version>
@@ -19,18 +20,22 @@
     </properties>
 
     <modules>
-        <module>sunshine-common-service</module>
+        <module>sunshine-common</module>
         <module>sunshine-devops-service</module>
         <module>sunshine-project-service</module>
         <module>sunshine-report-service</module>
-        <module>sunshine-server</module>
         <module>sunshine-team-service</module>
         <module>sunshine-test-service</module>
         <module>sunshine-user-service</module>
         <module>sunshine-wiki-service</module>
+        <module>sunshine-base-service</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>com.wusuiwei</groupId>
+            <artifactId>sunshine-common</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -41,8 +46,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.wusuiwei</groupId>
+                <artifactId>sunshine-common</artifactId>
+                <version>${sunshine.version}</version>
+            </dependency>
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -64,14 +75,13 @@
                 <version>${mybatisplus.version}</version>
             </dependency>
 
+
             <!-- mysql connector -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.version}</version>
             </dependency>
-
-
             <!-- test -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -82,4 +92,13 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
