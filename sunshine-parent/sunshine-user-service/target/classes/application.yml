@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: sunshine-user-service
   profiles:
     active: work
 server:

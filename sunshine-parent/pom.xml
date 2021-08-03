@@ -13,6 +13,7 @@
         <sunshine.version>1.0.0</sunshine.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <springcloud.version>Hoxton.SR8</springcloud.version>
         <springboot.version>2.3.1.RELEASE</springboot.version>
         <lombok.version>1.18.16</lombok.version>
         <mybatisplus.version>3.4.2</mybatisplus.version>
@@ -29,13 +30,10 @@
         <module>sunshine-user-service</module>
         <module>sunshine-wiki-service</module>
         <module>sunshine-base-service</module>
+        <module>sunshine-gateway</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>com.wusuiwei</groupId>
-            <artifactId>sunshine-common</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -49,11 +47,21 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--springcloud-->
             <dependency>
-                <groupId>com.wusuiwei</groupId>
-                <artifactId>sunshine-common</artifactId>
-                <version>${sunshine.version}</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
+            <!-- springboot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -61,12 +69,6 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-            <!-- springboot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
 
             <!-- mybatis plus -->
             <dependency>

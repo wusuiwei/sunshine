@@ -1,4 +1,4 @@
-package com.wusuiwei.common.exception;
+package com.wusuiwei.gateway.exception;
 
 import java.util.HashMap;
 import java.util.Map;

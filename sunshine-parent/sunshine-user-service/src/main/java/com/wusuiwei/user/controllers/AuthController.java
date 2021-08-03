@@ -1,7 +1,10 @@
 package com.wusuiwei.user.controllers;
 
+import com.wusuiwei.gateway.exception.ServiceException;
+import com.wusuiwei.user.daos.entities.User;
 import com.wusuiwei.user.models.LoginRequestDTO;
 import com.wusuiwei.user.models.RegisterRequestDTO;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +17,29 @@ import java.util.List;
  * @date 2021/8/2 17:07
  */
 @RestController
-@RequestMapping
 public class AuthController {
+    @GetMapping("/hello")
+    public List<User> hello() {
+        ArrayList<User> users = new ArrayList<>();
+        User user = new User();
+        user.setId(1);
+        user.setMobile("1");
+        user.setUsername("fafa");
+        user.setPassword("pas");
+        user.setSalt("salt");
+        user.setStatus(true);
+        user.setCreateAt(1212L);
+        user.setUpdateAt(12L);
+        user.setCreateUserId(1);
+        user.setUpdateUserId(2);
+        users.add(user);
+        return users;
+    }
+
+    @RequestMapping(value = "/exception")
+    public String exception() {
+        throw new ServiceException(11000L, "exception1111");
+    }
 
     /**
      * 用户登录

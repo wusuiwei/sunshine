@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.wusuiwei</groupId>
             <artifactId>sunshine-common</artifactId>
-            <scope>compile</scope>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
